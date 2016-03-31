@@ -41,6 +41,7 @@ public class Test extends JFrame implements KeyListener{
 		//textarea.setFont(new Font("標楷體",Font.BOLD,16));
 		//textarea.setEditable(false);
 		textfield = new JTextField(8);
+		textfield.setEditable(false);
 		textfield.setHorizontalAlignment(JTextField.RIGHT);
 		Font font = new Font("標楷體", Font.BOLD,24);
 		textfield.setFont(font);

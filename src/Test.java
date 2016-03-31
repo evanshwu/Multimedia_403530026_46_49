@@ -12,7 +12,7 @@ import java.text.NumberFormat;
 import javax.swing.*;
 
 
-public class Test extends JFrame implements KeyListener{
+public class Test extends JFrame{
 	private JFrame frame;
 	private JTextArea textarea;
 	private JTextField textfield;
@@ -34,7 +34,7 @@ public class Test extends JFrame implements KeyListener{
 		frame.setLayout(new GridBagLayout());
 		frame.setResizable(false);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.addKeyListener(this);
+		//frame.addKeyListener(this);
 		
 		//textarea = new JTextArea("0",1,10);
 		//textarea.doLayout();
@@ -1513,136 +1513,9 @@ public class Test extends JFrame implements KeyListener{
             
         });
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		frame.setVisible(true);
 	}
-
-	//key option
-	public void keyPressed(KeyEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void keyReleased(KeyEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void keyTyped(KeyEvent event) {
-		// TODO Auto-generated method stub
-		if(event.getKeyCode()==48|event.getKeyCode()==96)	//0
-		{
-			num1.doClick();
-		}
-		if(event.getKeyCode()==49|event.getKeyCode()==97)	//1
-		{
-			
-		}
-		if(event.getKeyCode()==50|event.getKeyCode()==98)	//2
-		{
-			
-		}
-		if(event.getKeyCode()==51|event.getKeyCode()==99)	//3
-		{
-			
-		}
-		if(event.getKeyCode()==52|event.getKeyCode()==100)	//4
-		{
-			
-		}
-		if(event.getKeyCode()==53|event.getKeyCode()==101)	//5
-		{
-			
-		}
-		if(event.getKeyCode()==54|event.getKeyCode()==102)	//6
-		{
-			
-		}
-		if(event.getKeyCode()==55|event.getKeyCode()==103)	//7
-		{
-			
-		}
-		if(event.getKeyCode()==56|event.getKeyCode()==104)	//8
-		{
-			
-		}
-		if(event.getKeyCode()==57|event.getKeyCode()==105)	//9
-		{
-		
-		}
-		/*
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		if(event.getKeyCode()==10)
-		{
-			
-		}
-		*/
-	}
+	
 	public double operation(int a){
 		double rtn = 0;
 		if(a==1){
@@ -1680,13 +1553,6 @@ public class Test extends JFrame implements KeyListener{
 	    a = 0;
 	    textfield.setText("0");
 	}
-	/*
-	public double chklength(){
-		double res;
-		return res;
-	}*/
-	
-	
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

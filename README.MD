@@ -19,7 +19,7 @@ There should be three things:
 To make things easier, I've made an exe file to run the caluculator, thumbs up for *Launch4j*! The src folder contains the source code, but the zip file contains the whole file you need to import into Eclipse. Some of you guys may afraid the exe file contains virus, so I recommend you to go [here][eclipse] and download Eclipse to run the program.
 [eclipse]:http://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/kepler/SR2/
 ######**Team members**
-Ahh I forgot, here's our team:
+Ahh I forgot, here's our team:<br>
 -403530046 Liao Yan Hong<br>
 -403530049 Guo Nai Zhen<br>
 -403530026 Wu Hsin Han<br>

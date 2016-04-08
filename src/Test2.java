@@ -335,13 +335,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "0"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "0"; 
                         textfield.setText(n1);
@@ -360,16 +360,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "0";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "0";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -425,45 +426,42 @@ public class Test extends JFrame{
             public void actionPerformed(ActionEvent e) {          	
                 switch(phase){
                 case 0:
-                	n1 = textfield.getText() + ".";
-                	number1 = Double.parseDouble(n1);
-                	textfield.setText(nf.format(number1));
+                	n1 = "0.";
                 	dothasdef = 1;
                 	break;
                 case 1:
                 	if(dothasdef == 1){
-                		
+                		// do nothing - a dot has been placed
                 	}else{
                 		n1 = textfield.getText() + ".";
-                    	number1 = Double.parseDouble(n1);
-                    	textfield.setText(nf.format(number1));
                     	dothasdef = 1;
                 	}
                 	break;
                 case 2:
                 	if(dothasdef == 2){
-                		
+                		// Generally it's impossible to get here
+                		// for safety, we do nothing here
                 	}else{
                 		n2 = "0.";
-                		number2 = Double.parseDouble(n2);
-                		textfield.setText(nf.format(number2));
                 		dothasdef = 2;
-                		// and goto phase 3
+                		// and goto phase 3 - this has been changed to number2
                 		phase = 3;
                 	}
                 	break;
-                	
                 case 3:
                 	if(dothasdef == 2){
-                		
+                		// do nothing - a dot has been placed
                 	}else{
                 		n2 = textfield.getText() + ".";
-                		number2 = Double.parseDouble(n2);
-                		textfield.setText(nf.format(number2));
                 		dothasdef = 2;
                 	}
                 	break;
                 case 4:
+                	// Similar as the calculator app in Windows - clean()
+                	clean();
+                	n1 = "0.";
+                	dothasdef = 1;
+                	phase = 1;
                 	break;
                 }
              }
@@ -528,6 +526,7 @@ public class Test extends JFrame{
                 	// case 3a
                 	number2 = number1;
                 	result = operation(a);
+                	// FOR TEST
                 	System.out.println("a="+a+"res="+result+"ph="+phase);
                 	r = nf.format(result);
                 	textfield.setText(r);
@@ -793,13 +792,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "1"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                     	textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "1"; 
                         textfield.setText(n1);
@@ -818,16 +817,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "1";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                     	textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "1";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -874,13 +874,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "2"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "2"; 
                         textfield.setText(n1);
@@ -899,16 +899,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "2";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "2";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -955,13 +956,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "3"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "3"; 
                         textfield.setText(n1);
@@ -980,16 +981,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "3";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "3";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1036,13 +1038,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "4"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "4"; 
                         textfield.setText(n1);
@@ -1061,16 +1063,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "4";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "4";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1117,13 +1120,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "5"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "5"; 
                         textfield.setText(n1);
@@ -1142,16 +1145,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "5";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "5";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1198,13 +1202,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "6"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "6"; 
                         textfield.setText(n1);
@@ -1223,16 +1227,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "6";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "6";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1279,13 +1284,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "7"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "7"; 
                         textfield.setText(n1);
@@ -1304,16 +1309,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "7";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "7";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1360,13 +1366,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "8"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "8"; 
                         textfield.setText(n1);
@@ -1385,16 +1391,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "8";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "8";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1440,13 +1447,13 @@ public class Test extends JFrame{
                     break;
                 case 1:
                     // check length availability 
-                    sys += "9"; // put next input to register string
+                    sys = textfield.getText(); // put next input to register string
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still under 8
                         textfield.setText(n1);
                         sys = ""; // clear String sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // Length will be under 8 -> store string
                         n1 += "9"; 
                         textfield.setText(n1);
@@ -1465,16 +1472,17 @@ public class Test extends JFrame{
                     break;
                 case 3:
                     // operator defined -> define number2 and check length (similar at phase 1)
-                    sys += "9";
+                    sys = textfield.getText();
                     // check length
                     if(sys.length()>8){
                         // length of n1 will still be under 8
                         textfield.setText(n2);
                         sys = ""; // clear string sys
-                    }else if(sys.length()<=8){
+                    }else if(sys.length()<8){
                         // length will be under 8 here -> store string
                         n2 += "9";
                         textfield.setText(n2);
+                        number2 = Double.parseDouble(n2);
                         sys = "";// clear string sys
                     }// exits check max length
                     break;
@@ -1569,6 +1577,7 @@ public class Test extends JFrame{
 	    number2 = 0;
 	    phase = 0;
 	    a = 0;
+	    dothasdef = 0;
 	    textfield.setText("0");
 	}
 	

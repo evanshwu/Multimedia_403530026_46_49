@@ -607,7 +607,7 @@ public class Test extends JFrame{
                     number1 = 0;
                     a = 2;
                     phase = 2;
-                    break;
+                    break;	
                 case 1:
                     // at phase 1, number1 and a will be defined
                     a = 2;
@@ -694,6 +694,11 @@ public class Test extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 result = operation(5);
                 textfield.setText(nf.format(result));
+                // keep display as the answer, clean everything and let it go back to phase 0
+                number1 = 0;
+                a = 0;
+                result = 0;
+                phase = 0;
              }
             
         });
